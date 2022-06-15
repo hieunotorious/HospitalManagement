@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "98a12beb-3ea8-448a-be64-f67242449103": {
+      "ProjectGuid": "98a12beb-3ea8-448a-be64-f67242449103",
+      "DisplayName": "BELibrary",
+      "ColorIndex": 0
+    },
+    "3085d9e7-2072-4e1f-a0d2-8787468f8666": {
+      "ProjectGuid": "3085d9e7-2072-4e1f-a0d2-8787468f8666",
+      "DisplayName": "HospitalManagement",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
