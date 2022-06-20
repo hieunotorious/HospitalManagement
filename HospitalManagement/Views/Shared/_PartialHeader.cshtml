@@ -5,7 +5,7 @@
     var user = CookiesManage.GetUser() ?? new Account();
 }
 
-<header class="header">
+<section class="section header">
     <nav class="navbar navbar-expand-lg header-nav">
         <div class="navbar-header">
             <a id="mobile_btn" href="javascript:void(0);">
@@ -18,6 +18,7 @@
             <a href="/" class="navbar-brand logo">
                 <img src="~/Content/theme/img/logo.png" class="img-fluid" alt="Logo">
             </a>
+            <a class="mobile-login" href="/account/login">Login</a>
         </div>
         <div class="main-menu-wrapper">
             <div class="menu-header">
@@ -74,5 +75,5 @@
             }
         </ul>
     </nav>
-</header>
+</section>
 <!-- End Header -->

@@ -102,6 +102,10 @@ body {
     overflow-x: hidden;
 }
 
+.mobile-login {
+    display:none;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #272b41;
     font-weight: 500;
@@ -2123,7 +2127,9 @@ button.bg-danger:hover {
     }
 
     .form-focus .form-control:focus ~ .focus-label,
-    .form-focus .form-control:-webkit-autofill ~ .focus-label {
+    .form-focus .form-control:-webkit-autofill ~ .focus-label,
+    .form-focus .form-control:valid ~ .focus-label
+    {
         opacity: 1;
         font-weight: 400;
         top: -18px;
@@ -13972,24 +13978,38 @@ ul.benifits-col li i {
 
     .navbar-header {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     #mobile_btn {
         left: 0;
         margin-right: 0;
-        padding: 0 15px;
-        position: absolute;
         z-index: 99;
     }
 
     .navbar-brand.logo {
-        width: 100%;
-        text-align: center;
         margin-right: 0;
+        display:flex;
+        justify-content:center;
     }
 
         .navbar-brand.logo img {
             height: 40px;
+        }
+
+    .mobile-login {
+        display: flex;
+        color: #09e5ab;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        border: 2px solid #09e5ab;
+        border-radius: 4px;
+    }
+
+        .mobile-login:hover {
+            color: white;
+            background: #09e5ab;
         }
 
     .search-box form {
