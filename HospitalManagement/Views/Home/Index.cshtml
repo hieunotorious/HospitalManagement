@@ -2,7 +2,6 @@
 @{
     var doctors = (List<Doctor>)ViewBag.Doctors ?? new List<Doctor>();
     var latestPosts = (List<Article>)ViewBag.LatestPosts ?? new List<Article>();
-
 }
 
 <section class="section section-search">
@@ -287,8 +286,8 @@
     </div>
 </section>
 
-@section Scripts
-{
-    <script src="~/Content/theme/js/slick.js"></script>
+@section Scripts{
     <script src="~/Content/theme/js/script.js"></script>
-} 
+
+    <script src="~/Content/theme/js/slick.js"></script>
+}
