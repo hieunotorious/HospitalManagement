@@ -158,16 +158,16 @@ namespace HospitalManagement.Controllers
                             Expires = DateTime.Now.AddDays(30)
                         };
                         HttpContext.Response.Cookies.Add(userCookie);
-                        return Json(new { status = true, mess = "Đăng nhập thành công" });
+                        return Json(new { status = true, mess = "Successfully Log in" });
                     }
                     else
                     {
-                        return Json(new { status = false, mess = "Tên và mật khẩu không chính xác" });
+                        return Json(new { status = false, mess = "Incorrect name and password" });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, mess = "Tên và mật khẩu không chính xác" });
+                    return Json(new { status = false, mess = "Incorrect name and password" });
                 }
             }
         }
@@ -178,7 +178,7 @@ namespace HospitalManagement.Controllers
         {
             if (us.Password != rePassword)
             {
-                return Json(new { status = false, mess = "Mật khẩu không khớp" });
+                return Json(new { status = false, mess = "Incorrect Password" });
             }
             using (var workScope = new UnitOfWork(new HospitalManagementDbContext()))
             {
@@ -233,7 +233,7 @@ namespace HospitalManagement.Controllers
 
                         //Login luon
                         if (HttpContext.Request.Url == null)
-                            return Json(new { status = false, mess = "Thêm không thành công" });
+                            return Json(new { status = false, mess = "Failed" });
 
                         var host = HttpContext.Request.Url.Authority;
 
@@ -245,16 +245,16 @@ namespace HospitalManagement.Controllers
                             Expires = DateTime.Now.AddDays(30)
                         };
                         HttpContext.Response.Cookies.Add(userCookie);
-                        return Json(new { status = true, mess = "Đăng ký thành công" });
+                        return Json(new { status = true, mess = "Successful registration" });
                     }
                     catch (Exception ex)
                     {
-                        return Json(new { status = false, mess = "Thêm không thành công", ex });
+                        return Json(new { status = false, mess = "Failed", ex });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, mess = "Username không khả dụng" });
+                    return Json(new { status = false, mess = "Username is not available" });
                 }
             }
         }
@@ -265,7 +265,7 @@ namespace HospitalManagement.Controllers
         {
             if (!CookiesManage.Logined())
             {
-                return Json(new { status = false, mess = "Chưa đăng nhập" });
+                return Json(new { status = false, mess = "Not logged in" });
             }
             var user = CookiesManage.GetUser();
             using (var workScope = new UnitOfWork(new HospitalManagementDbContext()))
@@ -355,21 +355,21 @@ namespace HospitalManagement.Controllers
                                 Expires = DateTime.Now.AddDays(30)
                             };
                             HttpContext.Response.Cookies.Add(userCookie);
-                            return Json(new { status = true, mess = "Cập nhật thành công" });
+                            return Json(new { status = true, mess = "Successfull login" });
                         }
                         else
                         {
-                            return Json(new { status = false, mess = "Cập nhật K thành công" });
+                            return Json(new { status = false, mess = "Update failed" });
                         }
                     }
                     catch (Exception ex)
                     {
-                        return Json(new { status = false, mess = "Cập nhật không thành công", ex });
+                        return Json(new { status = false, mess = "Update failed", ex });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, mess = "Tài khoản không khả dụng" });
+                    return Json(new { status = false, mess = "Account not available" });
                 }
             }
         }
@@ -380,15 +380,15 @@ namespace HospitalManagement.Controllers
         {
             if (oldPassword == "" || newPassword == "" || rePassword == "")
             {
-                return Json(new { status = false, mess = "Không được để trống" });
+                return Json(new { status = false, mess = "No blank" });
             }
             if (!CookiesManage.Logined())
             {
-                return Json(new { status = false, mess = "Chưa đăng nhập" });
+                return Json(new { status = false, mess = "Not login in" });
             }
             if (newPassword != rePassword)
             {
-                return Json(new { status = false, mess = "Mật khẩu không khớp" });
+                return Json(new { status = false, mess = "Password Incorrect" });
             }
             var user = CookiesManage.GetUser();
             using (var workScope = new UnitOfWork(new HospitalManagementDbContext()))
@@ -434,26 +434,26 @@ namespace HospitalManagement.Controllers
                                     Expires = DateTime.Now.AddDays(30)
                                 };
                                 HttpContext.Response.Cookies.Add(userCookie);
-                                return Json(new { status = true, mess = "Cập nhật thành công" });
+                                return Json(new { status = true, mess = "Successfull login" });
                             }
                             else
                             {
-                                return Json(new { status = false, mess = "Cập nhật K thành công" });
+                                return Json(new { status = false, mess = "Update failed" });
                             }
                         }
                         else
                         {
-                            return Json(new { status = false, mess = "mật khẩu cũ không đúng" });
+                            return Json(new { status = false, mess = "Password Incorrect" });
                         }
                     }
                     catch (Exception ex)
                     {
-                        return Json(new { status = false, mess = "Cập nhật không thành công", ex });
+                        return Json(new { status = false, mess = "Update failed", ex });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, mess = "Tài khoản không khả dụng" });
+                    return Json(new { status = false, mess = "Account not available" });
                 }
             }
         }

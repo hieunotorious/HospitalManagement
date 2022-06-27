@@ -98,12 +98,12 @@ namespace HospitalManagement.Controllers
                     Json(new
                     {
                         status = false,
-                        mess = "Có lỗi xảy ra: "
+                        mess = "Error: "
                     }) :
                     Json(new
                     {
                         status = true,
-                        mess = "Lấy thành công ",
+                        mess = "Successfull ",
                         data = new
                         {
                             doctor.Id,
@@ -127,14 +127,14 @@ namespace HospitalManagement.Controllers
 
             if (user == null)
             {
-                return Json(new { status = false, mess = "Vui lòng đăng nhập" });
+                return Json(new { status = false, mess = "Sign in" });
             }
 
             using (var workScope = new UnitOfWork(new HospitalManagementDbContext()))
             {
                 var doctor = workScope.Doctors.FirstOrDefault(x => x.Id == doctorId && !x.IsDelete);
                 if (doctor == null)
-                    return Json(new { status = true, mess = "Cập nhập thành công " });
+                    return Json(new { status = true, mess = "Successfull login " });
 
                 workScope.DoctorSchedules.Add(new DoctorSchedule
                 {
@@ -149,7 +149,7 @@ namespace HospitalManagement.Controllers
                     x.DoctorId == doctor.Id && x.PatientId == user.PatientId);
 
                 if (patientDoctor != null)
-                    return Json(new { status = true, mess = "Cập nhập thành công " });
+                    return Json(new { status = true, mess = "Successfull login " });
 
                 workScope.PatientDoctors.Add(new PatientDoctor
                 {
@@ -159,7 +159,7 @@ namespace HospitalManagement.Controllers
                 });
                 workScope.Complete();
 
-                return Json(new { status = true, mess = "Cập nhập thành công " });
+                return Json(new { status = true, mess = "Successfull login" });
             }
         }
     }
