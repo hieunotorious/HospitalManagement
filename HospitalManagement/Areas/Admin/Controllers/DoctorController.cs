@@ -9,12 +9,12 @@ namespace HospitalManagement.Areas.Admin.Controllers
 {
     public class DoctorController : BaseController
     {
-        private const string KeyElement = "Bác sĩ";
+        private const string KeyElement = "Doctor";
 
         // GET: Admin/Event
         public ActionResult Index()
         {
-            ViewBag.Feature = "Danh sách";
+            ViewBag.Feature = "List";
             ViewBag.Element = KeyElement;
 
             if (Request.Url != null) ViewBag.BaseURL = Request.Url.LocalPath;
@@ -41,12 +41,12 @@ namespace HospitalManagement.Areas.Admin.Controllers
                     Json(new
                     {
                         status = false,
-                        mess = "Có lỗi xảy ra: "
+                        mess = "Error: "
                     }) :
                     Json(new
                     {
                         status = true,
-                        mess = "Lấy thành công " + KeyElement,
+                        mess = "Successful " + KeyElement,
                         data = new
                         {
                             doctor.Id,
@@ -76,7 +76,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
                     Json(new
                     {
                         status = true,
-                        mess = "Lấy thành công " + KeyElement,
+                        mess = "Successful " + KeyElement,
                         data = lst.Select(x => new
                         {
                             x.Id,
@@ -104,11 +104,11 @@ namespace HospitalManagement.Areas.Admin.Controllers
                             workScope.Doctors.Put(elm, elm.Id);
                             workScope.Complete();
 
-                            return Json(new { status = true, mess = "Cập nhập thành công " });
+                            return Json(new { status = true, mess = "Successful " });
                         }
                         else
                         {
-                            return Json(new { status = false, mess = "Không tồn tại " + KeyElement });
+                            return Json(new { status = false, mess = "Not available " + KeyElement });
                         }
                     }
                 }
@@ -119,13 +119,13 @@ namespace HospitalManagement.Areas.Admin.Controllers
                         input.Id = Guid.NewGuid();
                         workScope.Doctors.Add(input);
                         workScope.Complete();
-                        return Json(new { status = true, mess = "Thêm thành công " + KeyElement });
+                        return Json(new { status = true, mess = "Successful " + KeyElement });
                     }
                 }
             }
             catch (Exception ex)
             {
-                return Json(new { status = false, mess = "Có lỗi xảy ra: " + ex.Message });
+                return Json(new { status = false, mess = "Error: " + ex.Message });
             }
         }
 
@@ -142,17 +142,17 @@ namespace HospitalManagement.Areas.Admin.Controllers
                         //del
                         workScope.Doctors.Remove(elm);
                         workScope.Complete();
-                        return Json(new { status = true, mess = "Xóa thành công " + KeyElement });
+                        return Json(new { status = true, mess = "Successful " + KeyElement });
                     }
                     else
                     {
-                        return Json(new { status = false, mess = "Không tồn tại " + KeyElement });
+                        return Json(new { status = false, mess = "NOt available " + KeyElement });
                     }
                 }
             }
             catch
             {
-                return Json(new { status = false, mess = "Thất bại" });
+                return Json(new { status = false, mess = "Failed" });
             }
         }
     }

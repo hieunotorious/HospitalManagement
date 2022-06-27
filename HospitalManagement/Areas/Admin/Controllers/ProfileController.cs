@@ -15,11 +15,11 @@ namespace HospitalManagement.Areas.Admin.Controllers
     {
         // GET: Admin/Profile
 
-        private string _keyElement = "Tài khoản";
+        private string _keyElement = "Account";
 
         public ActionResult Index()
         {
-            ViewBag.Feature = "Hồ sơ";
+            ViewBag.Feature = "Profile";
             ViewBag.Element = _keyElement;
             var user = GetCurrentUser();
 
@@ -39,7 +39,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            ViewBag.Feature = "Cập nhật";
+            ViewBag.Feature = "Update";
             ViewBag.Element = _keyElement;
             var user = GetCurrentUser();
 
