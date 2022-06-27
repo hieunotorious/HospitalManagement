@@ -14,13 +14,13 @@ namespace HospitalManagement.Areas.Admin.Controllers
     public class AccountController : BaseController
     {
         // GET: Admin/Course
-        private string _keyElement = "Tài khoản";
+        private string _keyElement = "Account";
 
         public ActionResult Index(int? role)
         {
             role = role ?? RoleKey.Admin;
 
-            ViewBag.Feature = "Danh sách";
+            ViewBag.Feature = "List";
             ViewBag.Element = _keyElement;
 
             if (Request.Url != null) ViewBag.BaseURL = Request.Url.LocalPath;
@@ -35,14 +35,14 @@ namespace HospitalManagement.Areas.Admin.Controllers
                 {
                     case RoleKey.Admin:
                         {
-                            _keyElement += " - Quản trị";
+                            _keyElement += " - Admin";
 
                             var listData = workScope.Accounts.Query(x => x.Role == RoleKey.Admin && !x.IsDeleted).ToList();
                             return View(listData);
                         }
                     case RoleKey.Doctor:
                         {
-                            _keyElement += " - Bác Sĩ";
+                            _keyElement += " - Doctor";
                             var accountDoctor = workScope.Accounts.Query(x => x.Role == RoleKey.Doctor && !x.IsDeleted).ToList();
                             return View(accountDoctor);
                         }
@@ -62,7 +62,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
 
         public ActionResult Create(int role)
         {
-            ViewBag.Feature = "Thêm mới";
+            ViewBag.Feature = "Add";
             ViewBag.Element = RoleKey.GetRole(role);
 
             if (Request.Url != null)
@@ -168,12 +168,12 @@ namespace HospitalManagement.Areas.Admin.Controllers
                     Json(new
                     {
                         status = false,
-                        mess = "Có lỗi xảy ra: "
+                        mess = "Error: "
                     }) :
                     Json(new
                     {
                         status = true,
-                        mess = "Lấy thành công " + _keyElement,
+                        mess = "Success " + _keyElement,
                         data = new
                         {
                             account.Id,
@@ -207,11 +207,11 @@ namespace HospitalManagement.Areas.Admin.Controllers
                             {
                                 if (!CookiesManage.Logined())
                                 {
-                                    return Json(new { status = false, mess = "Chưa đăng nhập" });
+                                    return Json(new { status = false, mess = "Not logged in" });
                                 }
                                 if (input.Password != rePassword)
                                 {
-                                    return Json(new { status = false, mess = "Mật khẩu không khớp" });
+                                    return Json(new { status = false, mess = "Incorrect password" });
                                 }
 
                                 var passwordFactory = input.Password + (input.Role == RoleKey.Patient ? VariableExtensions.KeyCryptorClient : VariableExtensions.KeyCrypto);
@@ -239,11 +239,11 @@ namespace HospitalManagement.Areas.Admin.Controllers
                             workScope.Accounts.Put(elm, elm.Id);
                             workScope.Complete();
 
-                            return Json(new { status = true, mess = "Cập nhập thành công " });
+                            return Json(new { status = true, mess = "Successful " });
                         }
                         else
                         {
-                            return Json(new { status = false, mess = "Không tồn tại " + _keyElement });
+                            return Json(new { status = false, mess = "Error " + _keyElement });
                         }
                     }
                 }
@@ -253,18 +253,18 @@ namespace HospitalManagement.Areas.Admin.Controllers
                     {
                         if (string.IsNullOrEmpty(input.Password) || string.IsNullOrEmpty(rePassword))
                         {
-                            return Json(new { status = false, mess = "Không được để trống mật khẩu" });
+                            return Json(new { status = false, mess = "Password cannot be left blank" });
                         }
 
                         if (input.Password != rePassword)
                         {
-                            return Json(new { status = false, mess = "Mật khẩu không khớp" });
+                            return Json(new { status = false, mess = "Password Incorrect" });
                         }
 
                         var elm = workScope.Accounts.Query(x => x.UserName.ToLower() == input.UserName.ToLower() && !x.IsDeleted).Any();
                         if (elm)
                         {
-                            return Json(new { status = false, mess = "Tên đăng nhập đã tồn tại" });
+                            return Json(new { status = false, mess = "Username available" });
                         }
 
                         var passwordFactory = input.Password + (input.Role == RoleKey.Patient ? VariableExtensions.KeyCryptorClient : VariableExtensions.KeyCrypto);
@@ -279,7 +279,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
 
                             if (patient == null)
                             {
-                                return Json(new { status = false, mess = "Bệnh nhân k tồn tại" });
+                                return Json(new { status = false, mess = "Patient does not exist" });
                             }
 
                             input.PatientId = patient.Id;
@@ -296,7 +296,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
 
                             if (doctor == null)
                             {
-                                return Json(new { status = false, mess = "Bác sĩ k tồn tại" });
+                                return Json(new { status = false, mess = "Doctor does not exist" });
                             }
 
                             input.PatientId = null;
@@ -316,7 +316,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
                             workScope.Complete();
                         }
                     }
-                    return Json(new { status = true, mess = "Thêm thành công " + _keyElement });
+                    return Json(new { status = true, mess = "Success " + _keyElement });
                 }
             }
             catch (Exception ex)
@@ -324,7 +324,7 @@ namespace HospitalManagement.Areas.Admin.Controllers
                 return Json(new
                 {
                     status = false,
-                    mess = "Có lỗi xảy ra: " + ex.Message
+                    mess = "Error: " + ex.Message
                 });
             }
         }
@@ -343,17 +343,17 @@ namespace HospitalManagement.Areas.Admin.Controllers
                         //del
                         workScope.Accounts.Put(elm, elm.Id);
                         workScope.Complete();
-                        return Json(new { status = true, mess = "Xóa thành công " + _keyElement });
+                        return Json(new { status = true, mess = "Delete Successfully" + _keyElement });
                     }
                     else
                     {
-                        return Json(new { status = false, mess = "Không tồn tại " + _keyElement });
+                        return Json(new { status = false, mess = "Not available " + _keyElement });
                     }
                 }
             }
             catch
             {
-                return Json(new { status = false, mess = "Thất bại" });
+                return Json(new { status = false, mess = "Failed" });
             }
         }
     }

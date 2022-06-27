@@ -8,8 +8,8 @@
     <div class="container-fluid">
         <div class="banner-wrapper">
             <div class="banner-header text-center">
-                <h1>Search Doctor, Make an Appointment</h1>
-                <p>Discover the best doctors, clinic & hospital the city nearest to you.</p>
+                <h1></h1>
+                <p></p>
             </div>
             <div class="search-box">
                 <form action="/doctor/search" method="post">
@@ -240,48 +240,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="section section-blogs">
-    <div class="container-fluid">
-
-        <div class="section-header text-center">
-            <h2>Blogs and News</h2>
-            <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-
-        <div class="row blog-grid-row">
-
-            @foreach (var art in latestPosts)
-            {
-                <div class="col-md-6 col-lg-3 col-sm-12">
-
-                    <div class="blog grid-blog">
-                        <div class="blog-image">
-                            <a href="/article/detail?id=@art.Id"><img class="img-fluid" src="@art.Image" alt="@art.Title"></a>
-                        </div>
-                        <div class="blog-content">
-                            <ul class="entry-meta meta-item">
-                                <li>
-                                    <div class="post-author">
-                                        <a href="#">
-                                            <img src="~/Content/theme/img/doctors/doctor-thumb-01.jpg" alt="Post Author"> <span>Dr. Ruby Perrin</span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><i class="far fa-clock"></i> @art.CreatedDate.ToString("D")</li>
-                            </ul>
-                            <h3 class="blog-title"><a hhref="/article/detail?id=@art.Id">@art.Title</a></h3>
-                            <p class="mb-0">@art.Description</p>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-        <div class="view-all text-center">
-            <a href="/article" class="btn btn-primary">View All</a>
         </div>
     </div>
 </section>
