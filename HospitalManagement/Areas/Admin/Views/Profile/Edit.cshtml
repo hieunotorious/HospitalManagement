@@ -42,14 +42,14 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="control-label">Tên đăng nhập</label>
+                                            <label class="control-label">Username</label>
                                             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @readonly = true, @autocomplete = "off", @class = "form-control", @required = "required", @maxlength = 250 } })
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="control-label">Tên đầy đủ</label>
+                                            <label class="control-label">Fullname</label>
                                             @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @required = "required", @maxlength = 250 } })
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="control-label">Giới tính</label>
+                                            <label class="control-label">Gender</label>
                                             @Html.DropDownList("Gender", (SelectList)ViewBag.Genders, "---Select---", new { @class = "form-control", @required = "required" })
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label class="control-label">Khoa</label>
+                                                <label class="control-label">Dept</label>
                                                 @Html.DropDownList("FacultyId", (SelectList)ViewBag.Faculties,
                                                     new { @class = "form-control", @required = "required" })
                                             </div>
@@ -85,13 +85,13 @@
 
                                 <hr />
                                 <div class="form-group">
-                                    <label class="col-lg-3 control-label">Mật khẩu</label>
+                                    <label class="col-lg-3 control-label">Password</label>
                                     <div class="col-lg-9 input-group mar-btm">
                                         <input type="password" autocomplete="new-password" class="form-control" name="Password" placeholder="Mật khẩu">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-3 control-label">Nhập lại mật khẩu</label>
+                                    <label class="col-lg-3 control-label">Repassword</label>
                                     <div class="col-lg-9 input-group mar-btm">
                                         <input type="password" class="form-control" autocomplete="off" name="RePassword" placeholder="Nhập lại mật khẩu">
                                     </div>
