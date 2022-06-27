@@ -412,157 +412,157 @@
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-home"></i>
-                                                <span class="menu-title">Bảng điều khiển</span>
+                                                <span class="menu-title">Controller</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("dashboard")? "collapse in" : "collapse")">
-                                                <li><a href="/">Trang chủ</a></li>
-                                                <li><a href="/admin">Trang quản trị</a></li>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/admin">Admin Home</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-calendar-4"></i>
-                                                <span class="menu-title">Đặt lịch</span>
+                                                <span class="menu-title">Booking</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("doctorschedule")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/DoctorSchedule">Danh sách</a></li>
+                                                <li><a href="/admin/DoctorSchedule">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-male"></i>
-                                                <span class="menu-title">Bệnh nhân</span>
+                                                <span class="menu-title">Patients</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("patient")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/patient">Sảnh bệnh nhân</a></li>
-                                                <li><a href="/admin/patient/all">Danh sách</a></li>
-                                                <li><a href="/admin/patient/create">Tạo mới</a></li>
+                                                <li><a href="/admin/patient">Patients Management</a></li>
+                                                <li><a href="/admin/patient/all">List</a></li>
+                                                <li><a href="/admin/patient/create">Add</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-file-word"></i>
-                                                <span class="menu-title">Bệnh Án</span>
+                                                <span class="menu-title">Patient Record</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("patientrecord")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/patientRecord">Danh sách bệnh án</a></li>
-                                                <li><a href="/admin/patientRecord/create">Tạo mới</a></li>
+                                                <li><a href="/admin/patientRecord">Patient Record List</a></li>
+                                                <li><a href="/admin/patientRecord/create">Add</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-file"></i>
-                                                <span class="menu-title">Danh mục</span>
+                                                <span class="menu-title">Category</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("category")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/category">Danh sách</a></li>
+                                                <li><a href="/admin/category">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-gear"></i>
-                                                <span class="menu-title">Vật tư</span>
+                                                <span class="menu-title">Supplies</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("item")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/item">Danh sách</a></li>
-                                                <li><a href="/admin/item/create">Thêm mới</a></li>
+                                                <li><a href="/admin/item">List</a></li>
+                                                <li><a href="/admin/item/create">Add</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-repair"></i>
-                                                <span class="menu-title">Thuốc</span>
+                                                <span class="menu-title">Medicine</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("medicine")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/medicine">Danh sách</a></li>
+                                                <li><a href="/admin/medicine">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-database"></i>
-                                                <span class="menu-title">Khoa</span>
+                                                <span class="menu-title">Faculty</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("faculty")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/faculty">Danh sách</a></li>
+                                                <li><a href="/admin/faculty">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-user-md"></i>
-                                                <span class="menu-title">Bác sĩ</span>
+                                                <span class="menu-title">Doctors</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("doctor")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/doctor">Danh sách</a></li>
+                                                <li><a href="/admin/doctor">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-newspaper-o"></i>
-                                                <span class="menu-title">Bài viết</span>
+                                                <span class="menu-title">Blog</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("article")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/article">Danh sách</a></li>
-                                                <li><a href="/admin/article/create">Thêm mới</a></li>
+                                                <li><a href="/admin/article">List</a></li>
+                                                <li><a href="/admin/article/create">Add</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-user"></i>
-                                                <span class="menu-title">Tài khoản</span>
+                                                <span class="menu-title">Account</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("account")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/account?role=@RoleKey.Admin">TK quản trị</a></li>
+                                                <li><a href="/admin/account?role=@RoleKey.Admin">Admin</a></li>
                                             </ul>
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("account")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/account?role=@RoleKey.Doctor">TK bác sĩ</a></li>
+                                                <li><a href="/admin/account?role=@RoleKey.Doctor">Doctor</a></li>
                                             </ul>
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("account")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/account?role=@RoleKey.Patient">TK bệnh nhân</a></li>
+                                                <li><a href="/admin/account?role=@RoleKey.Patient">Patient</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-bar-chart"></i>
-                                                <span class="menu-title">Thống kê</span>
+                                                <span class="menu-title">Statistical</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("statistical")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/statistical">Danh sách</a></li>
+                                                <li><a href="/admin/statistical">List</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -578,53 +578,53 @@
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-home"></i>
-                                                <span class="menu-title">Bảng điều khiển</span>
+                                                <span class="menu-title">Controller</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("dashboard")? "collapse in" : "collapse")">
-                                                <li><a href="/">Trang chủ</a></li>
-                                                <li><a href="/admin">Trang quản trị</a></li>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/admin">Admin Home</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-calendar-4"></i>
-                                                <span class="menu-title">Đặt lịch</span>
+                                                <span class="menu-title">Booking</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("doctorschedule")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/DoctorSchedule">Danh sách</a></li>
+                                                <li><a href="/admin/DoctorSchedule">List</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-male"></i>
-                                                <span class="menu-title">Bệnh nhân</span>
+                                                <span class="menu-title">Patients</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("patient")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/patient">Sảnh bệnh nhân</a></li>
-                                                <li><a href="/admin/patient/all">Danh sách</a></li>
-                                                <li><a href="/admin/patient/create">Tạo mới</a></li>
+                                                <li><a href="/admin/patient">Patients Management</a></li>
+                                                <li><a href="/admin/patient/all">List</a></li>
+                                                <li><a href="/admin/patient/create">Add</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <i class="demo-pli-file-word"></i>
-                                                <span class="menu-title">Bệnh Án</span>
+                                                <span class="menu-title">Patient Record</span>
                                                 <i class="arrow"></i>
                                             </a>
 
                                             <!--Submenu-->
                                             <ul class="@(ViewContext.RouteData.Values["controller"].ToString().ToLower().Equals("patientrecord")? "collapse in" : "collapse")">
-                                                <li><a href="/admin/patientRecord">Danh sách bệnh án</a></li>
-                                                <li><a href="/admin/patientRecord/create">Tạo mới</a></li>
+                                                <li><a href="/admin/patientRecord">List</a></li>
+                                                <li><a href="/admin/patientRecord/create">Add</a></li>
                                             </ul>
                                         </li>
                                     </ul>

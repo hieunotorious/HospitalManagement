@@ -39,7 +39,7 @@ namespace HospitalManagement.Controllers
 
         public ActionResult E404()
         {
-            ViewBag.Message = "Your contact page. ";
+            ViewBag.Message = "Page not Found ";
 
             return View();
         }
