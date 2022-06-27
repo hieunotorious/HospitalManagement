@@ -24,9 +24,9 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="text-center">STT</th>
-                        <th class="text-center">Tên </th>
-                        <th class="text-center">Đơn vị </th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name </th>
+                        <th class="text-center">Role </th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -63,19 +63,19 @@
                 <div class="modal-body">
                     <input type="hidden" name="isEdit" value="false" />
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Tên</label>
+                        <label class="col-lg-3 control-label">Name</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Name" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Đơn vị</label>
+                        <label class="col-lg-3 control-label">Role</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Unit" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Mô tả</label>
+                        <label class="col-lg-3 control-label">Description</label>
                         <div class="col-lg-7">
                             <textarea class="form-control" name="Description" rows="10"></textarea>
                         </div>
@@ -85,7 +85,7 @@
                 <!--Modal footer-->
                 <div class="modal-footer">
                     <button data-dismiss="modal" class="btn btn-default" type="button">Đóng</button>
-                    <button class="btn btn-success" type="submit">Lưu</button>
+                    <button class="btn btn-success" type="submit">Save</button>
                 </div>
             </form>
         </div>
@@ -107,19 +107,19 @@
                     <input type="hidden" name="Id" />
                     <input type="hidden" name="isEdit" value="true" />
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Tên</label>
+                        <label class="col-lg-3 control-label">Name</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Name" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Đơn vị</label>
+                        <label class="col-lg-3 control-label">Role</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Unit" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Mô tả</label>
+                        <label class="col-lg-3 control-label">Description</label>
                         <div class="col-lg-7">
                             <textarea class="form-control" name="Description" rows="10"></textarea>
                         </div>
@@ -128,8 +128,8 @@
 
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Đóng</button>
-                    <button class="btn btn-success" type="submit">Lưu</button>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-success" type="submit">Save</button>
                 </div>
             </form>
         </div>
@@ -225,7 +225,7 @@
 
         //Del
         function deleteElement(_id, name) {
-            var mess = 'Xác nhận <b>xóa</b> bản ghi <b>' + name + '</b>';
+            var mess = 'Confirm <b>Delete</b> Record <b>' + name + '</b>';
             bootbox.confirm(mess, function (result) {
                 if (result) {
                     ajax.del(`${baseUrl}/del`, { id: _id },

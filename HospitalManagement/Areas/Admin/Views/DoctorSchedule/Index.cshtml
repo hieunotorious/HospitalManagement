@@ -96,8 +96,8 @@
                 </div>
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Đóng</button>
-                    <button class="btn btn-success" type="submit">Lưu</button>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-success" type="submit">Save</button>
                 </div>
             </form>
         </div>
@@ -137,9 +137,9 @@
             });
             const isChecked = $("#demo-allow-comments").is(":checked");
             if (isChecked) {
-                $("#status").text("Nam");
+                $("#status").text("Male");
             } else {
-                $("#status").text("Nữ");
+                $("#status").text("Female");
             }
 
             //
@@ -148,9 +148,9 @@
         $("#demo-allow-comments").change(function () {
             const isChecked = $("#demo-allow-comments").is(":checked");
             if (isChecked) {
-                $("#status").text("Nam");
+                $("#status").text("Male");
             } else {
-                $("#status").text("Nữ");
+                $("#status").text("Female");
             }
         });
         $("#Image").change(function () {
@@ -262,7 +262,7 @@
 
         //Del
         function deleteElement(_id, name) {
-            var mess = `Xác nhận <b>xóa</b> bản ghi <b>${name}</b>`;
+            var mess = `Confirm <b>Delete</b> Record <b>${name}</b>`;
             bootbox.confirm(mess,
                 function (result) {
                     if (result) {

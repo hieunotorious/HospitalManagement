@@ -94,27 +94,27 @@
             <div class="cls-content-sm panel">
                 <div class="panel-body">
                     <div class="mar-ver pad-btm">
-                        <h1 class="h3">Tài khoản Đăng nhập</h1>
-                        <p>Đăng nhập vào tài khoản của bạn</p>
+                        <h1 class="h3">Login Account</h1>
+                        <p>Please log in</p>
                     </div>
                     <form action="#" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="Username" id="Username" placeholder="Tài Khoản">
+                            <input type="text" class="form-control" name="Username" id="Username" placeholder="Account">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="Password" id="Password" placeholder="Mật Khẩu">
+                            <input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
                         </div>
                         <div class="checkbox pad-btm text-left">
                             <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox" checked>
                             <label for="demo-form-checkbox">Remember me</label>
                         </div>
                         <input type="hidden" value="@ViewBag.ReturnUrl" id="rtUrl" />
-                        <button class="btn btn-primary btn-lg btn-block" id="btnLogin" type="submit">Đăng nhập</button>
+                        <button class="btn btn-primary btn-lg btn-block" id="btnLogin" type="submit">Log in</button>
                     </form>
                 </div>
 
                 <div class="pad-all">
-                    <a href="#" id="demo-bootbox-bounce" class="btn-link mar-rgt">Quên mật khẩu ?</a>
+                    <a href="#" id="demo-bootbox-bounce" class="btn-link mar-rgt">Forgot password ?</a>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
         $(document).ready(() => {
             $('#demo-bootbox-bounce').on('click', function () {
                 bootbox.confirm({
-                    message: "<p class='text-semibold text-main'>Cảm ơn</p><p>Để lấy lại mật khẩu vui lòng liên hệ nhân viên bệnh viện để được cấp lại mật khẩu mới.</p>",
+                    message: "<p class='text-semibold text-main'>Cảm ơn</p><p>To retrieve your password please contact the hospital staff.</p>",
                     buttons: {
                         confirm: {
                             label: "Đóng"
