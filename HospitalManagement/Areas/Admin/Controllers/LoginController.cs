@@ -59,16 +59,16 @@ namespace HospitalManagement.Areas.Admin.Controllers
                             Expires = DateTime.Now.AddDays(30)
                         };
                         HttpContext.Response.Cookies.Add(userCookie);
-                        return Json(new { status = true, mess = "Đăng nhập thành công" });
+                        return Json(new { status = true, mess = "Logged in successfully" });
                     }
                     else
                     {
-                        return Json(new { status = false, mess = "Đăng nhập Không thành công" });
+                        return Json(new { status = false, mess = "Login unsuccessfully" });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, mess = "Tên và mật khẩu không chính xác" });
+                    return Json(new { status = false, mess = "Incorrect username and password" });
                 }
             }
         }

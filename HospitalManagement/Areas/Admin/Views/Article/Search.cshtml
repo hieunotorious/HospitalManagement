@@ -207,7 +207,7 @@
 
         //Del
         function deleteElement(_id, name) {
-            var mess = 'Xác nhận <b>xóa</b> bản ghi <b>' + name + '</b>';
+            var mess = 'Confirm <b>Delete</b> record <b>' + name + '</b>';
             bootbox.confirm(mess, function (result) {
                 if (result) {
                     ajax.del(`${baseUrl}/del`,

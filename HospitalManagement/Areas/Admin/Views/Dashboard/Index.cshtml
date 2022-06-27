@@ -22,7 +22,7 @@
                 <div class="panel-control">
                     <input type="number" placeholder="Textbox" value="@currentYear" id="year" class="form-control">
                 </div>
-                <h3 class="panel-title">Số lượng bệnh nhân thăm khám</h3>
+                <h3 class="panel-title">Number of patients</h3>
             </div>
             <div class="pad-all">
                 <div id="demo-morris-area-legend" class="text-center"></div>
@@ -36,7 +36,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="text-semibold text-uppercase text-main">Thời tiết</p>
+                    <p class="text-semibold text-uppercase text-main">Weather</p>
                     <a class="weatherwidget-io" href="https://forecast7.com/en/21d03105d83/hanoi/" data-label_1="HÀ NỘI" data-label_2="Thời tiết" data-theme="original">Thời thiết HÀ NỘI </a>
                 </div>
             </div>
@@ -49,12 +49,12 @@
                 <!--Sparkline Area Chart-->
                 <div class="panel panel-info panel-colorful">
                     <div class="pad-all">
-                        <p class="text-lg text-semibold"><i class="demo-pli-add-user icon-fw"></i>Bệnh nhân</p>
+                        <p class="text-lg text-semibold"><i class="demo-pli-add-user icon-fw"></i>Patient</p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.PatientTodayCount</span> Hôm nay
+                            <span class="pull-right text-bold">@ViewBag.PatientTodayCount</span> Today
                         </p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.PatientMonthCount</span> Tháng này
+                            <span class="pull-right text-bold">@ViewBag.PatientMonthCount</span> This month
                         </p>
                     </div>
                     <div class="pad-top text-center">
@@ -68,12 +68,12 @@
                 <!--Sparkline Line Chart-->
                 <div class="panel panel-danger panel-colorful">
                     <div class="pad-all">
-                        <p class="text-lg text-semibold"><i class="fa fa-hotel icon-fw"></i>Vật tư</p>
+                        <p class="text-lg text-semibold"><i class="fa fa-hotel icon-fw"></i>Supplies</p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.ItemTodayCount</span> Hôm nay
+                            <span class="pull-right text-bold">@ViewBag.ItemTodayCount</span> Today
                         </p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.ItemMonthCount</span> Tháng này
+                            <span class="pull-right text-bold">@ViewBag.ItemMonthCount</span> This month
                         </p>
                     </div>
                     <div class="pad-top text-center">
@@ -90,12 +90,12 @@
                 <!--Sparkline bar chart -->
                 <div class="panel panel-mint panel-colorful">
                     <div class="pad-all">
-                        <p class="text-lg text-semibold"><i class="fa fa-cubes icon-fw"></i> Đơn thuốc</p>
+                        <p class="text-lg text-semibold"><i class="fa fa-cubes icon-fw"></i> Prescription</p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.PrescriptionTodayCount </span> Hôm nay
+                            <span class="pull-right text-bold">@ViewBag.PrescriptionTodayCount </span> Today
                         </p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.PrescriptionTodayCount </span> Tháng này
+                            <span class="pull-right text-bold">@ViewBag.PrescriptionTodayCount </span> This month
                         </p>
                     </div>
                     <div class="text-center">
@@ -110,12 +110,12 @@
                 <!--Sparkline pie chart -->
                 <div class="panel panel-warning panel-colorful">
                     <div class="pad-all">
-                        <p class="text-lg text-semibold"><i class="demo-pli-calendar-4 icon-fw"></i> Lịch đặt</p>
+                        <p class="text-lg text-semibold"><i class="demo-pli-calendar-4 icon-fw"></i> Appointment</p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.ScheduleTodayCount</span> Hôm nay
+                            <span class="pull-right text-bold">@ViewBag.ScheduleTodayCount</span> Today
                         </p>
                         <p class="mar-no">
-                            <span class="pull-right text-bold">@ViewBag.ScheduleMonthCount</span> Tháng này
+                            <span class="pull-right text-bold">@ViewBag.ScheduleMonthCount</span> This month
                         </p>
                     </div>
                     <div class="text-center">
@@ -136,7 +136,7 @@
                     @Html.DropDownList("CategoryId", (SelectList)ViewBag.Categories,
                         new { @class = "form-control", @required = "required" })
                 </div>
-                <h3 class="panel-title">Thống kê vật tư theo danh mục</h3>
+                <h3 class="panel-title">Filter supplies by category</h3>
             </div>
             <div class="panel-body">
                 <div id="demo-morris-donut" class="morris-donut" style="height: 262px"></div>
@@ -158,7 +158,7 @@
             </div>
             <div class="media-body">
                 <p class="text-2x mar-no text-semibold">@ViewBag.ScheduleCount</p>
-                <p class="mar-no">Lịch đặt</p>
+                <p class="mar-no">Appointment</p>
             </div>
         </div>
     </div>
@@ -171,7 +171,7 @@
             </div>
             <div class="media-body">
                 <p class="text-2x mar-no text-semibold">@ViewBag.PatientCount</p>
-                <p class="mar-no">Bệnh nhân</p>
+                <p class="mar-no">Patient</p>
             </div>
         </div>
     </div>
@@ -184,7 +184,7 @@
             </div>
             <div class="media-body">
                 <p class="text-2x mar-no text-semibold">@ViewBag.PrescriptionCount</p>
-                <p class="mar-no">Đơn thuốc</p>
+                <p class="mar-no">Prescription</p>
             </div>
         </div>
     </div>
@@ -197,7 +197,7 @@
             </div>
             <div class="media-body">
                 <p class="text-2x mar-no text-semibold">@ViewBag.ItemCount</p>
-                <p class="mar-no">Vật tư y tế</p>
+                <p class="mar-no">Supplies</p>
             </div>
         </div>
     </div>
@@ -207,7 +207,7 @@
     <div class="col-xs-12">
         <div class="panel">
             <div class="panel-heading">
-                <h3 class="panel-title">Danh sách bệnh nhân mới</h3>
+                <h3 class="panel-title">New patient list</h3>
             </div>
 
             <!--Data Table-->
@@ -249,12 +249,12 @@
                     <table class="table table-striped" id="tblData">
                         <thead>
                             <tr>
-                                <th class="text-center">STT</th>
-                                <th class="text-center">Mã BN</th>
-                                <th class="text-center">Họ Tên</th>
-                                <th class="text-center">Mã căn cước</th>
-                                <th class="text-center">Ngày sinh</th>
-                                <th class="text-center">Giới tính</th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Patient ID</th>
+                                <th class="text-center">FUllname</th>
+                                <th class="text-center">ID Code</th>
+                                <th class="text-center">Date of Birth</th>
+                                <th class="text-center">Gender</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -267,7 +267,7 @@
                                     <td class="text-center">@item.value.FullName</td>
                                     <td class="text-center">@item.value.IndentificationCardId</td>
                                     <td class="text-center">@item.value.DateOfBirth.ToString("dd/MM/yyyy")</td>
-                                    <td class="text-center">@(item.value.Gender ? "Nam" : "Nữ")</td>
+                                    <td class="text-center">@(item.value.Gender ? "Male" : "Female")</td>
                                     <td class="text-center">
                                         <button class="btn btn-info btn-icon" title="Xem bệnh án" onclick="openRecord('@item.value.Id')"><i class="fa fa-calendar  icon-lg"></i></button>
                                         <button class="btn btn-info btn-icon" title="Sửa bệnh án" onclick="openEditing('@item.value.Id')"><i class="demo-psi-pen-5 icon-lg"></i></button>

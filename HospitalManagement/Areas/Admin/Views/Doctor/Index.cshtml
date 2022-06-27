@@ -35,10 +35,10 @@
             <table class="table table-striped" id="tblData">
                 <thead>
                     <tr>
-                        <th class="text-center">STT</th>
-                        <th class="text-center">Tên </th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name </th>
                         <th class="text-center">Email </th>
-                        <th class="text-center">Khoa </th>
+                        <th class="text-center">Dept </th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -51,8 +51,8 @@
                             <td class="text-center">@item.value.Email</td>
                             <td class="text-center">@item.value.Faculty.Name</td>
                             <td class="text-center">
-                                <button class="btn btn-info btn-sm btn-icon  add-tooltip" data-original-title="Sửa" onclick="openModal(true,'@item.value.Id')"><i class="demo-psi-pen-5 icon-lg"></i></button>
-                                <button class="btn btn-danger btn-sm btn-icon  add-tooltip" data-original-title="Xóa" onclick="deleteElement('@item.value.Id','@item.value.Name')"><i class="demo-psi-recycling icon-lg"></i></button>
+                                <button class="btn btn-info btn-sm btn-icon  add-tooltip" data-original-title="Edit" onclick="openModal(true,'@item.value.Id')"><i class="demo-psi-pen-5 icon-lg"></i></button>
+                                <button class="btn btn-danger btn-sm btn-icon  add-tooltip" data-original-title="Delete" onclick="deleteElement('@item.value.Id','@item.value.Name')"><i class="demo-psi-recycling icon-lg"></i></button>
                             </td>
                         </tr>
                     }
@@ -77,7 +77,7 @@
                 <!--Modal body-->
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Tên</label>
+                        <label class="col-lg-3 control-label">Nmae</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Name" placeholder="" required>
                         </div>
@@ -89,25 +89,25 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Giới thiệu</label>
+                        <label class="col-lg-3 control-label">About</label>
                         <div class="col-lg-7">
                             <textarea rows="3" class="form-control" name="Descriptions" placeholder="" required></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Sđt</label>
+                        <label class="col-lg-3 control-label">Phone</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Phone" placeholder="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Địa chỉ</label>
+                        <label class="col-lg-3 control-label">Address</label>
                         <div class="col-lg-7">
                             <input type="text" class="form-control" name="Address" placeholder="" required>
                         </div>
                     </div>
                     <div class="form-group edit-modal">
-                        <label class="col-lg-3 control-label " for="demo-hor-inputpass">Giới tính </label>
+                        <label class="col-lg-3 control-label " for="demo-hor-inputpass">Gender </label>
                         <div class="col-lg-7">
                             <input class="toggle-switch" id="demo-allow-comments" name="Gender" type="checkbox">
                             <label for="demo-allow-comments"></label>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Khoa</label>
+                        <label class="col-lg-3 control-label">Dept</label>
                         <div class="col-lg-7 input-group mar-btm">
                             @Html.DropDownList("FacultyId", (SelectList)ViewBag.Faculties,
                                 new { @class = "form-control", @required = "required" })
@@ -314,7 +314,7 @@
 
         //Del
         function deleteElement(_id, name) {
-            var mess = `Xác nhận <b>xóa</b> bản ghi <b>${name}</b>`;
+            var mess = `Confirm <b>Delete</b> Record <b>${name}</b>`;
             bootbox.confirm(mess,
                 function (result) {
                     if (result) {
